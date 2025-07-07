@@ -10,8 +10,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Product Grid 02 || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Product Grid 02 || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default async function ProductGridPage2({ params }) {

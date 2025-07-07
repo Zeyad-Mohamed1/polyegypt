@@ -33,7 +33,7 @@
   "navigation": {
     "home": "الرئيسية",
     "shop": "المتجر",
-    "storeList": "علاماتنا التجارية",
+    "storeList": "العروض",
     "aboutUs": "من نحن",
     "contact": "اتصل بنا",
     "wishlist": "قائمة الرغبات",
@@ -112,7 +112,7 @@
     "getDirection": "الحصول على الاتجاه",
     "email": "themesflat@gmail.com",
     "phone": "315-666-6688",
-    "copyright": "ستيفيا. جميع الحقوق محفوظة.",
+    "copyright": "بولي ايجي. جميع الحقوق محفوظة.",
     "designDevelopment": "التصميم والتطوير",
     "bluebrain": "bluebrain",
     "paymentText": "الدفع:",
@@ -160,7 +160,7 @@
   },
   "shopgram": {
     "title": "أحدث منشوراتنا",
-    "subtitle": "منتجات ستيفيا لصحة افضل.",
+    "subtitle": "منتجات بولي ايجي لصحة افضل.",
     "loading": "جاري تحميل المعرض...",
     "error": "فشل في تحميل المعرض. يرجى المحاولة مرة أخرى.",
     "noImages": "لا توجد صور متاحة في الوقت الحالي.",

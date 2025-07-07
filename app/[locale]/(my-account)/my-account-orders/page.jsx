@@ -8,8 +8,8 @@ import { Link } from "@/i18n/navigation";
 import React from "react";
 
 export const metadata = {
-  title: "My Account Orders || Stevia",
-  description: "Stevia",
+  title: "My Account Orders || PolyEgy",
+  description: "PolyEgy",
 };
 
 export const generateStaticParams = async () => {

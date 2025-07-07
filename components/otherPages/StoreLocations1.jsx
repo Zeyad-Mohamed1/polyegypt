@@ -103,7 +103,7 @@ export default function StoreLocations1() {
                       <div className="tf-store-contact">
                         {/* <div className="tf-store-info">
                           <p className="text-button">{t("website")}:</p>
-                          <p className="text-secondary">www.Stevia.com</p>
+                          <p className="text-secondary">www.PolyEgy.com</p>
                         </div> */}
                         <div className="tf-store-info">
                           <p className="text-button">{t("email")}:</p>

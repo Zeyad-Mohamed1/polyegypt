@@ -3,8 +3,8 @@ import React from "react";
 import Link from "next/link";
 export const metadata = {
   title:
-    "Page Not Found || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Page Not Found || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default function PageNotFoundPage() {

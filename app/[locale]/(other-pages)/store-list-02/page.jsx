@@ -7,8 +7,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Store List 02 || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Store List 02 || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default function StorelistPage2() {

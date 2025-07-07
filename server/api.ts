@@ -16,7 +16,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 // Function to set authentication token in cookies
 export async function setAuthToken(token: string): Promise<void> {
   const cookieStore = await cookies();
-  cookieStore.set("Stevia-token", token, {
+  cookieStore.set("PolyEgy-token", token, {
     httpOnly: true,
     sameSite: "strict",
     path: "/",
@@ -25,7 +25,7 @@ export async function setAuthToken(token: string): Promise<void> {
 
 export async function clearAuthToken(): Promise<void> {
   const cookieStore = await cookies();
-  cookieStore.delete("Stevia-token");
+  cookieStore.delete("PolyEgy-token");
 }
 
 // Function to invalidate all cached data for a specific locale
@@ -62,7 +62,7 @@ async function fetchApi<T>(
 
   try {
     const cookieStore = await cookies();
-    const token = cookieStore.get("Stevia-token")?.value;
+    const token = cookieStore.get("PolyEgy-token")?.value;
 
     const response = await fetch(`${BASE_URL}${endpoint}`, {
       ...restOptions,

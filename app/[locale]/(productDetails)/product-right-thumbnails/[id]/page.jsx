@@ -10,8 +10,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Product Right Thumbnail || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Product Right Thumbnail || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default async function ProductRighrThumbnailPage({ params }) {

@@ -21,7 +21,7 @@ export default function Products() {
       <div className="container">
         <div className="heading-section d-flex justify-content-between align-items-center wow fadeInUp bookstore-product-heading">
           <div>
-            <h3 className="heading">Stevia's Bestsellers</h3>
+            <h3 className="heading">PolyEgy's Bestsellers</h3>
             <p className="subheading text-secondary">
               Discover the Most Loved Books by Readers Everywhere.
             </p>

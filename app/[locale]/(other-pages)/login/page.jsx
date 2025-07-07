@@ -7,8 +7,8 @@ import React from "react";
 import { getTranslations } from "next-intl/server";
 
 export const metadata = {
-  title: "Login || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+  title: "Login || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default async function LoginPage({ params }) {

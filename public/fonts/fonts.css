@@ -1,176 +1,155 @@
-/* Alexandria Font for Arabic - Local Files */
+/* DIN Next LT Arabic Font for Arabic - Local Files */
 @font-face {
-  font-family: "Alexandria";
+  font-family: "DIN Next LT Arabic";
   font-style: normal;
-  font-weight: 100;
+  font-weight: 300;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-THIN.TTF") format("truetype");
+  src: url("./dinnextltarabic/DINNextLTArabic-Light.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "DIN Next LT Arabic";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./dinnextltarabic/DINNextLTArabic-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./dinnextltarabic/DINNextLTArabic-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "DIN Next LT Arabic";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./dinnextltarabic/DINNextLTArabic-Bold.ttf") format("truetype");
+}
+
+/* Avenir Font for English - Local Files */
+@font-face {
+  font-family: "Avenir";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
+}
+
+@font-face {
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-EXTRALIGHT.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-LIGHT.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-REGULAR.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-MEDIUM.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-SEMIBOLD.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-BOLD.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-EXTRABOLD.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Alexandria";
+  font-family: "Avenir";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url("./alexandria/ALEXANDRIA-BLACK.TTF") format("truetype");
-}
-
-/* Sunset Gothic Font for English - Local Files */
-@font-face {
-  font-family: "Sunset Gothic";
-  font-style: normal;
-  font-weight: 100;
-  font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-THIN.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Sunset Gothic";
+  font-family: "Avenir";
   font-style: italic;
   font-weight: 100;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-THIN-ITALIC.TTF")
-    format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Sunset Gothic";
-  font-style: normal;
-  font-weight: 300;
-  font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-LIGHT.TTF") format("truetype");
-}
-
-@font-face {
-  font-family: "Sunset Gothic";
+  font-family: "Avenir";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-LIGHT-ITALIC.TTF")
-    format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Sunset Gothic";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO.TTF") format("truetype");
-}
-
-@font-face {
-  font-family: "Sunset Gothic";
+  font-family: "Avenir";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-ITALIC.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Sunset Gothic";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-MEDIUM.TTF") format("truetype");
-}
-
-@font-face {
-  font-family: "Sunset Gothic";
+  font-family: "Avenir";
   font-style: italic;
   font-weight: 500;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-MEDIUM-ITALIC.TTF")
-    format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Sunset Gothic";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-BOLD-1.TTF") format("truetype");
-}
-
-@font-face {
-  font-family: "Sunset Gothic";
+  font-family: "Avenir";
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-BOLD-ITALIC.TTF")
-    format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
-  font-family: "Sunset Gothic";
-  font-style: normal;
-  font-weight: 800;
-  font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-HEAVY.TTF") format("truetype");
-}
-
-@font-face {
-  font-family: "Sunset Gothic";
+  font-family: "Avenir";
   font-style: italic;
   font-weight: 800;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-HEAVY-ITALIC.TTF")
-    format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 /* Alternative font family name for compatibility */
@@ -179,7 +158,7 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-THIN.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
@@ -187,7 +166,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-LIGHT.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
@@ -195,7 +174,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
@@ -203,7 +182,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-MEDIUM.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
@@ -211,7 +190,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-BOLD-1.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 @font-face {
@@ -219,7 +198,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("./sunset-gothic/SUNSET-GOTHIC-PRO-HEAVY.TTF") format("truetype");
+  src: url("./avenir/Avenir.ttc") format("truetype-collection");
 }
 
 /* math */
@@ -471,7 +450,7 @@
   font-style: normal;
   font-weight: 100 1000;
   font-display: swap;
-  src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZ2IHSeH.woff2)
+  src: url(https://fonts.gstatic.com/s/dmsans/v15/rP2Hp2ywxg089UriCZOIHQ.woff2)
     format("woff2");
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF,
     U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020,

@@ -11,7 +11,7 @@ export default function Gallery() {
       <div className="container-full4">
         <div className="heading-section text-center wow fadeInUp">
           <h3 className="heading">Follow us on instagram</h3>
-          <p className="subheading text-secondary">@Stevia</p>
+          <p className="subheading text-secondary">@PolyEgy</p>
         </div>
         <Swiper
           dir="ltr"

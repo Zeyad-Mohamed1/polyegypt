@@ -5,7 +5,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Pagination } from "swiper/modules";
+import { useQuery } from "@tanstack/react-query";
+import { getSlider } from "@/actions/slider";
+import { useLocale } from "next-intl";
 export default function Hero() {
+  const locale = useLocale();
+  const { data: sliders, isLoading } = useQuery({
+    queryKey: ["slider"],
+    queryFn: () => getSlider(),
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section className="tf-slideshow slider-default slider-effect-fade">
       <Swiper
@@ -18,12 +31,12 @@ export default function Hero() {
         dir="ltr"
         className="swiper tf-sw-slideshow"
       >
-        {sliderData2.map((slide, index) => (
+        {sliders?.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="wrap-slider">
               <Image
                 alt="fashion-slideshow"
-                src={slide.image}
+                src={slide.image_path}
                 width={1920}
                 height={803}
               />
@@ -39,10 +52,14 @@ export default function Hero() {
                   </div>
                   <div className="fade-item fade-item-3 box-btn-slider">
                     <Link
-                      href={`/shop-default-grid`}
+                      href={`/collections`}
                       className="tf-btn btn-fill btn-white"
                     >
-                      <span className="text">Explore Collection</span>
+                      <span className="text">
+                        {locale === "ar"
+                          ? " تصفح المجموعات"
+                          : "Explore Collections"}
+                      </span>
                       <i className="icon icon-arrowUpRight" />
                     </Link>
                   </div>

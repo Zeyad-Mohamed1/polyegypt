@@ -9,8 +9,8 @@ import { getTranslations } from "next-intl/server";
 
 export const metadata = {
   title:
-    "Shopping Cart || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Shopping Cart || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default async function ShopingCartPage({ params }) {

@@ -9,8 +9,8 @@ import RelatedProducts from "@/components/productDetails/RelatedProducts";
 import React from "react";
 
 export const metadata = {
-  title: "Product Detail || Stevia",
-  description: "Stevia",
+  title: "Product Detail || PolyEgy",
+  description: "PolyEgy",
 };
 
 // Helper function to get translated content

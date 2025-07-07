@@ -1,37 +1,33 @@
-import BannerTab2 from "@/components/common/BannerTab2";
-import Categories from "@/components/common/Categories";
 import Features from "@/components/common/Features";
-import MarqueeSection2 from "@/components/common/MarqueeSection2";
-import Products5 from "@/components/products/Products5";
-
-import ShopGram4 from "@/components/common/ShopGram4";
-import Testimonials2 from "@/components/otherPages/Testimonials2";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
-import Banner from "@/components/homes/cosmetic/Banner";
-import Collections from "@/components/homes/cosmetic/Collections";
-import Hero from "@/components/homes/cosmetic/Hero";
+import Banner from "@/components/homes/decor/Banner";
+import Collections from "@/components/homes/decor/Collections";
+import Hero from "@/components/homes/decor/Hero";
+import ListCollections from "@/components/homes/decor/ListCollections";
+import LookBook from "@/components/homes/decor/LookBook";
+import Products from "@/components/homes/decor/Products";
+// import Products2 from "@/components/common/Products6";
+import Testimonials from "@/components/homes/decor/Testimonials";
 import React from "react";
 
 export const metadata = {
-  title: "Home Stevia",
-  description: "Home Stevia",
+  title: "PolyEgy",
+  description: "PolyEgy",
 };
 
-export default function HomeCosmeticPage() {
+export default function HomeDecorPage() {
   return (
     <>
-      <Header1 />
+      <Header1 fullWidth />
       <Hero />
-      <MarqueeSection2 />
       <Collections />
-      {/* <Categories parentClass="" /> */}
-      <Products5 />
-      <Banner />
-      <BannerTab2 parentClass="flat-spacing" />
-      <Testimonials2 />
+      <Products />
+      {/* <LookBook /> */}
+      {/* <Products2 /> */}
+      <Testimonials />
       <Features parentClass="flat-spacing line-top-container" />
-      <ShopGram4 />
+      <Banner />
       <Footer1 />
     </>
   );

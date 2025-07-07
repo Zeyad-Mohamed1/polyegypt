@@ -9,8 +9,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Product Fixed Scroll || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Product Fixed Scroll || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default async function ProductFixedScrollPage({ params }) {

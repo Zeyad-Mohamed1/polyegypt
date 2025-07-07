@@ -1,14 +1,14 @@
 // Language-specific font families
 
-// English fonts - Using Sunset Gothic as primary font (with Nunito Sans fallback)
+// English fonts - Using Avenir as primary font (with Nunito Sans fallback)
 :lang(en) {
-  font-family: "Sunset Gothic", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
+  font-family: "Avenir", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
     "Helvetica Neue", sans-serif;
 }
 
-// Arabic fonts - Using Alexandria as primary font
+// Arabic fonts - Using DIN Next LT Arabic as primary font
 :lang(ar) {
-  font-family: "Alexandria", "Cairo", "Tajawal", "Amiri", sans-serif;
+  font-family: "DIN Next LT Arabic", "Cairo", "Tajawal", "Amiri", sans-serif;
 }
 
 // RTL specific adjustments
@@ -36,7 +36,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Alexandria", "Cairo", "Tajawal", "Amiri", sans-serif;
+    font-family: "DIN Next LT Arabic", "Cairo", "Tajawal", "Amiri", sans-serif;
     font-weight: 700;
   }
 
@@ -44,13 +44,13 @@
   span,
   div,
   a {
-    font-family: "Alexandria", "Cairo", "Tajawal", "Amiri", sans-serif;
+    font-family: "DIN Next LT Arabic", "Cairo", "Tajawal", "Amiri", sans-serif;
     font-weight: 400;
   }
 
   button,
   .btn {
-    font-family: "Alexandria", "Cairo", "Tajawal", "Amiri", sans-serif;
+    font-family: "DIN Next LT Arabic", "Cairo", "Tajawal", "Amiri", sans-serif;
     font-weight: 500;
   }
 }
@@ -63,7 +63,7 @@
   h4,
   h5,
   h6 {
-    font-family: "Sunset Gothic", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
+    font-family: "Avenir", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
       "Helvetica Neue", sans-serif;
     font-weight: 700;
   }
@@ -72,14 +72,14 @@
   span,
   div,
   a {
-    font-family: "Sunset Gothic", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
+    font-family: "Avenir", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
       "Helvetica Neue", sans-serif;
     font-weight: 400;
   }
 
   button,
   .btn {
-    font-family: "Sunset Gothic", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
+    font-family: "Avenir", "Nunito Sans", "Inter", "Segoe UI", "Roboto",
       "Helvetica Neue", sans-serif;
     font-weight: 600;
   }

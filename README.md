@@ -1,4 +1,4 @@
-# Stevia E-commerce Template
+# PolyEgy E-commerce Template
 
 This is a Next.js e-commerce template with support for multiple languages and product variants.
 

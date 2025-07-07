@@ -16,8 +16,8 @@ import AccountSidebar from "@/components/modals/AccountSidebar";
 import "@/styles/search-modal.css";
 
 export const metadata = {
-  title: "Stevia",
-  description: "Stevia",
+  title: "PolyEgy",
+  description: "PolyEgy",
 };
 
 export default async function LocaleLayout({ children, params }) {

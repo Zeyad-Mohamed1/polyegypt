@@ -33,7 +33,7 @@
   "navigation": {
     "home": "Home",
     "shop": "Shop",
-    "storeList": "Our Brands",
+    "storeList": "Offers",
     "aboutUs": "About Us",
     "contact": "Contact",
     "wishlist": "Wishlist",
@@ -112,7 +112,7 @@
     "getDirection": "GET DIRECTION",
     "email": "themesflat@gmail.com",
     "phone": "315-666-6688",
-    "copyright": "Stevia. All Rights Reserved.",
+    "copyright": "PolyEgy. All Rights Reserved.",
     "designDevelopment": "Design And Development",
     "bluebrain": "bluebrain",
     "paymentText": "Payment:",
@@ -160,7 +160,7 @@
   },
   "shopgram": {
     "title": "Our Latest Posts",
-    "subtitle": "Stevia products for better health.",
+    "subtitle": "PolyEgy products for better health.",
     "loading": "Loading gallery...",
     "error": "Failed to load gallery. Please try again later.",
     "noImages": "No images available at the moment.",
@@ -242,7 +242,7 @@
   "StoreLocations": {
     "loading": "Loading store data...",
     "error": "Error loading store data",
-    "defaultStoreName": "Stevia",
+    "defaultStoreName": "PolyEgy",
     "website": "Website",
     "email": "Email",
     "phone": "Phone",
@@ -306,8 +306,8 @@
   "myAccount": {
     "title": "My Account",
     "addressTitle": "Address",
-    "metaTitle": "My Account Address || Stevia - Multipurpose React Nextjs eCommerce Template",
-    "metaDescription": "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "metaTitle": "My Account Address || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+    "metaDescription": "PolyEgy - Multipurpose React Nextjs eCommerce Template",
     "homepage": "Homepage",
     "pages": "Pages",
     "information": "Information",
@@ -338,8 +338,8 @@
   },
   "aboutUs": {
     "title": "About Our Store",
-    "metaTitle": "About Us || Stevia - Multipurpose React Nextjs eCommerce Template",
-    "metaDescription": "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "metaTitle": "About Us || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+    "metaDescription": "PolyEgy - Multipurpose React Nextjs eCommerce Template",
     "homepage": "Homepage",
     "pages": "Pages"
   },

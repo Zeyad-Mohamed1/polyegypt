@@ -6,8 +6,9 @@ import StoreLocations3 from "@/components/otherPages/StoreLocations3";
 import React from "react";
 import Link from "next/link";
 export const metadata = {
-  title: "Countact 02 || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+  title:
+    "Countact 02 || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default function ContactPage2() {

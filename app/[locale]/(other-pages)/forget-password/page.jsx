@@ -7,8 +7,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Forgot Password || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Forgot Password || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default function ForgotPasswordPage() {

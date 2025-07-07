@@ -1,10 +1,28 @@
 "use client";
 
+import { getBestItems } from "@/actions/products";
 import ProductCard1 from "@/components/productCards/ProductCard1";
 import { products12 } from "@/data/products";
+import { useQuery } from "@tanstack/react-query";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Products() {
+  const {
+    data: products,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["products"],
+    queryFn: getBestItems,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+
+  console.log(products);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <section className="flat-spacing">
       <div className="container">

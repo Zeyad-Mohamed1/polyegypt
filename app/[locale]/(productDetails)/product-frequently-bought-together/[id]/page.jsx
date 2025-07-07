@@ -11,8 +11,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Product Detail || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Product Detail || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default async function ProductFrequentlyBoughtTogetherPage1({ params }) {

@@ -3,8 +3,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "Comming Soon || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "Comming Soon || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default function CommingSoonPage() {

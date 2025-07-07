@@ -5,14 +5,63 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Link from "next/link";
 import Image from "next/image";
 import { Navigation } from "swiper/modules";
+import { getCategories } from "@/actions/categories";
+import { useQuery } from "@tanstack/react-query";
+import { useLocale, useTranslations } from "next-intl";
+
 export default function Collections() {
+  const t = useTranslations("categories");
+  const locale = useLocale();
+  const {
+    data: categories,
+    isLoading,
+    error,
+  } = useQuery({
+    queryKey: ["categories"],
+    queryFn: () => getCategories(),
+  });
+
+  if (isLoading) {
+    return (
+      <section className="flat-spacing">
+        <div className="container">
+          <div className="heading-section text-center">
+            <h3 className="heading">{t("shop_by_skin_concern")}</h3>
+            <p className="subheading text-secondary">
+              {t("fresh_styles_subtitle")}
+            </p>
+          </div>
+          <div className="tf-grid-layout tf-col-2 md-col-3">
+            {[...Array(6)].map((_, index) => (
+              <div key={index} className="collection-position-2 style-6">
+                <div
+                  className="img-style animate-pulse bg-gray-200"
+                  style={{ height: 615 }}
+                ></div>
+                <div className="content">
+                  <div className="cls-btn">
+                    <div className="h-6 bg-gray-200 rounded animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="flat-spacing">
       <div className="container-full2">
         <div className="heading-section text-center wow fadeInUp">
-          <h3 className="heading">Shop by Collections</h3>
+          <h3 className="heading">
+            {locale === "ar" ? "تصفح المجموعات" : "Shop by Collections"}
+          </h3>
           <p className="subheading">
-            Browse our Top Trending: the hottest picks loved by all.
+            {locale === "ar"
+              ? "تصفح أحدث المجموعات والمنتجات"
+              : "Browse our Top Trending: the hottest picks loved by all."}
           </p>
         </div>
         <div className="flat-sw-navigation wow fadeInUp" data-wow-delay="0.1s">
@@ -32,15 +81,15 @@ export default function Collections() {
             }}
             dir="ltr"
           >
-            {collections7.map((collection, index) => (
+            {categories?.map((collection, index) => (
               <SwiperSlide key={index}>
                 <div className="collection-position-2 style-7 hover-img">
                   <Link href={`/collections`} className="img-style">
                     <Image
                       className="lazyload"
-                      data-src={collection.imgSrc}
+                      data-src={collection.logo_path}
                       alt={`banner-cls-${index + 1}`}
-                      src={collection.imgSrc}
+                      src={collection.logo_path}
                       width={657}
                       height={875}
                     />
@@ -48,12 +97,12 @@ export default function Collections() {
                   <div className="content text-center">
                     <h4 className="title">
                       <Link href={`/collections`} className="link text-white">
-                        {collection.title}
+                        {collection.name}
                       </Link>
                     </h4>
-                    <span className="text-title text-white">
+                    {/* <span className="text-title text-white">
                       {collection.productCount}
-                    </span>
+                    </span> */}
                   </div>
                 </div>
               </SwiperSlide>

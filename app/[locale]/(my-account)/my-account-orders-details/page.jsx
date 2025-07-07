@@ -8,8 +8,8 @@ import React from "react";
 
 export const metadata = {
   title:
-    "My Account Order Details || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+    "My Account Order Details || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export const generateStaticParams = async () => {

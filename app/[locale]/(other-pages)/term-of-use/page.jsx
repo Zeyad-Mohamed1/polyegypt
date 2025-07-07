@@ -6,8 +6,8 @@ import React from "react";
 import { Link } from "@/i18n/navigation";
 import { setRequestLocale } from "next-intl/server";
 export const metadata = {
-  title: "Terms of Use || Stevia - Terms of Use",
-  description: "Stevia - Terms of Use",
+  title: "Terms of Use || PolyEgy - Terms of Use",
+  description: "PolyEgy - Terms of Use",
 };
 
 export default async function TermsOfUsePage({ params }) {

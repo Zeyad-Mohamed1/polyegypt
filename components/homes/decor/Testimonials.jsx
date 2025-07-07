@@ -1,20 +1,69 @@
 "use client";
 import Image from "next/image";
-import { testimonialsWithProduct2 } from "@/data/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useContextElement } from "@/context/Context";
 import { Pagination } from "swiper/modules";
+import { getTestimonials } from "@/actions/main";
+import { useQuery } from "@tanstack/react-query";
+import { useLocale } from "next-intl";
 
 export default function Testimonials() {
-  const { setQuickViewItem } = useContextElement();
+  const locale = useLocale();
+  const { data: testimonials, isLoading } = useQuery({
+    queryKey: ["testimonials"],
+    queryFn: getTestimonials,
+    staleTime: 5 * 60 * 1000, // 5 minutes
+  });
+
+  if (isLoading) {
+    return (
+      <section className="flat-spacing pt-0">
+        <div className="container">
+          <div className="heading-section text-center">
+            <h3 className="heading">
+              {locale === "ar" ? "قالوا عننا" : "Customer Say!"}
+            </h3>
+            <p className="subheading">
+              {locale === "ar"
+                ? "جاري تحميل التعليقات"
+                : "Loading testimonials..."}
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!testimonials || testimonials.length === 0) {
+    return (
+      <section className="flat-spacing pt-0">
+        <div className="container">
+          <div className="heading-section text-center">
+            <h3 className="heading">
+              {locale === "ar" ? "اراء العملاء" : "Customer Say!"}
+            </h3>
+            <p className="subheading">
+              {locale === "ar"
+                ? "لا يوجد تعليقات حاليا"
+                : "No testimonials available at the moment."}
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="flat-spacing pt-0">
       <div className="container">
         <div className="heading-section text-center wow fadeInUp">
-          <h3 className="heading">Customer Say!</h3>
+          <h3 className="heading">
+            {locale === "ar" ? "اراء العملاء" : "Customer Say!"}
+          </h3>
           <p className="subheading">
-            Our customers adore our products, and we constantly aim to delight
-            them.
+            {locale === "ar"
+              ? "تعليقات عملائنا على منتجاتنا"
+              : "Our customers adore our products, and we constantly aim to delight them."}
           </p>
         </div>
         <Swiper
@@ -39,29 +88,19 @@ export default function Testimonials() {
             el: ".spd21",
           }}
         >
-          {testimonialsWithProduct2.map((testimonial, index) => (
-            <SwiperSlide key={index} className="swiper-slide">
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={testimonial.id} className="swiper-slide">
               <div
                 className="testimonial-item style-row hover-img wow fadeInUp"
-                data-wow-delay={testimonial.wowDelay}
+                data-wow-delay={`${index * 0.1}s`}
               >
                 <div className="img-style">
                   <Image
-                    data-src={testimonial.imgSrc}
-                    alt={testimonial.alt}
-                    src={testimonial.imgSrc}
+                    alt={testimonial.name}
+                    src={testimonial.image_path}
                     width={615}
                     height={410}
                   />
-                  <a
-                    href="#quickView"
-                    onClick={() => setQuickViewItem(testimonial)}
-                    data-bs-toggle="modal"
-                    className="box-icon hover-tooltip center"
-                  >
-                    <span className="icon icon-eye" />
-                    <span className="tooltip">Quick View</span>
-                  </a>
                 </div>
                 <div className="content">
                   <div className="content-top">
@@ -70,12 +109,10 @@ export default function Testimonials() {
                         <i key={i} className="icon icon-star" />
                       ))}
                     </div>
-                    <p className="text-secondary">
-                      {testimonial.testimonialText}
-                    </p>
+                    <p className="text-secondary">{testimonial.description}</p>
                     <div className="box-author">
                       <div className="text-title author">
-                        {testimonial.author}
+                        {testimonial.name}
                       </div>
                       <svg
                         className="icon"
@@ -117,18 +154,18 @@ export default function Testimonials() {
                   <div className="box-avt">
                     <div className="avatar avt-60 round">
                       <Image
-                        alt="avt"
-                        src={testimonial.avatarSrc}
+                        alt={testimonial.name}
+                        src={testimonial.image_path}
                         width={600}
                         height={800}
                       />
                     </div>
-                    <div className="box-price">
+                    <div className="box-info">
                       <p className="text-title text-line-clamp-1">
-                        {testimonial.title}
+                        {testimonial.jop}
                       </p>
-                      <div className="text-button price">
-                        ${testimonial.price.toFixed(2)}
+                      <div className="text-secondary">
+                        {new Date(testimonial.created_at).toLocaleDateString()}
                       </div>
                     </div>
                   </div>

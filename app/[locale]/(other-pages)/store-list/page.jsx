@@ -6,8 +6,8 @@ import React from "react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 export const metadata = {
-  title: "Store List || Stevia - Multipurpose React Nextjs eCommerce Template",
-  description: "Stevia - Multipurpose React Nextjs eCommerce Template",
+  title: "Store List || PolyEgy - Multipurpose React Nextjs eCommerce Template",
+  description: "PolyEgy - Multipurpose React Nextjs eCommerce Template",
 };
 
 export default function StorelistPage() {

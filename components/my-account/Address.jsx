@@ -12,7 +12,6 @@ export default function Address() {
     queryKey: ["cities"],
     queryFn: () => getCities(),
   });
-  console.log(cities);
 
   // Create address mutation
   const createAddressMutation = useMutation({
@@ -87,7 +86,6 @@ export default function Address() {
   // TODO: Implement delete address functionality
   const handleDelete = (id) => {
     // TODO: Implement delete address functionality
-    console.log("Delete functionality not implemented in server actions");
   };
 
   if (isLoading) {
