@@ -8,8 +8,11 @@ import { Pagination } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
 import { getSlider } from "@/actions/slider";
 import { useLocale } from "next-intl";
+
 export default function Hero() {
   const locale = useLocale();
+  const isRTL = locale === "ar";
+
   const { data: sliders, isLoading } = useQuery({
     queryKey: ["slider"],
     queryFn: () => getSlider(),
@@ -23,12 +26,16 @@ export default function Hero() {
     <section className="tf-slideshow slider-default slider-effect-fade">
       <Swiper
         slidesPerView={1}
+        centeredSlides={false}
+        spaceBetween={0}
+        loop={true}
+        autoplay={false}
+        dir={isRTL ? "rtl" : "ltr"}
         modules={[Pagination]}
         pagination={{
           clickable: true,
           el: ".spd19",
         }}
-        dir="ltr"
         className="swiper tf-sw-slideshow"
       >
         {sliders?.map((slide, index) => (
@@ -39,6 +46,7 @@ export default function Hero() {
                 src={slide.image_path}
                 width={1920}
                 height={803}
+                className="hero-slider-image"
               />
               <div className="box-content">
                 <div className="content-slider">
@@ -56,9 +64,7 @@ export default function Hero() {
                       className="tf-btn btn-fill btn-white"
                     >
                       <span className="text">
-                        {locale === "ar"
-                          ? " تصفح المجموعات"
-                          : "Explore Collections"}
+                        {isRTL ? " تصفح المجموعات" : "Explore Collections"}
                       </span>
                       <i className="icon icon-arrowUpRight" />
                     </Link>

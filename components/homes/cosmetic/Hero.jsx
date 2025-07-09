@@ -21,7 +21,7 @@ export default function Hero() {
   // Show loading state or fallback
   if (isLoading) {
     return (
-      <div className="tf-slideshow slider-style2 slider-effect-fade">
+      <div className="tf-slideshow slider-default slider-effect-fade">
         <div
           className="d-flex justify-content-center align-items-center"
           style={{ height: "796px" }}
@@ -37,7 +37,7 @@ export default function Hero() {
   // Filter only web type sliders and ensure we have data
 
   return (
-    <div className="tf-slideshow slider-style2 slider-effect-fade">
+    <div className="tf-slideshow slider-default slider-effect-fade">
       <Swiper
         dir={isRtl ? "ltr" : "ltr"}
         centeredSlides={false}
@@ -76,26 +76,25 @@ export default function Hero() {
                 className="hero-slider-image"
               />
               <div className="box-content">
-                <div className="container">
-                  <div className="content-slider">
-                    <div className="box-title-slider">
-                      <div className="fade-item fade-item-1 heading title-display text-white">
-                        {slider.title}
-                      </div>
-                      <p className="fade-item fade-item-2 body-text-1 text-white">
-                        {slider.description}
-                      </p>
+                <div className="content-slider">
+                  <div className="box-title-slider">
+                    <div className="fade-item fade-item-1 heading title-display text-white">
+                      {slider.title}
                     </div>
-                    <div className="fade-item fade-item-3 box-btn-slider">
-                      <Link
-                        href={`/shop`}
-                        className="tf-btn btn-fill btn-square btn-white"
-                      >
-                        <span className="text">
-                          {locale === "ar" ? "تسوق الآن" : "Shop Now"}
-                        </span>
-                      </Link>
-                    </div>
+                    <p className="fade-item fade-item-2 body-text-1 text-white">
+                      {slider.description}
+                    </p>
+                  </div>
+                  <div className="fade-item fade-item-3 box-btn-slider">
+                    <Link
+                      href={`/collections`}
+                      className="tf-btn btn-fill btn-white"
+                    >
+                      <span className="text">
+                        {isRtl ? " تصفح المجموعات" : "Explore Collections"}
+                      </span>
+                      <i className="icon icon-arrowUpRight" />
+                    </Link>
                   </div>
                 </div>
               </div>
