@@ -71,3 +71,8 @@ export async function getTermsAndConditions() {
   const response = await get("/conditions");
   return response;
 }
+
+export async function getLookbookProducts() {
+  const response = await get("/hotspots");
+  return response;
+}

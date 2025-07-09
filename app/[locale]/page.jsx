@@ -1,4 +1,5 @@
 import Features from "@/components/common/Features";
+import Products2 from "@/components/common/Products2";
 import Footer1 from "@/components/footers/Footer1";
 import Header1 from "@/components/headers/Header1";
 import Banner from "@/components/homes/decor/Banner";
@@ -23,8 +24,8 @@ export default function HomeDecorPage() {
       <Hero />
       <Collections />
       <Products />
-      {/* <LookBook /> */}
-      {/* <Products2 /> */}
+      <LookBook />
+      <Products2 />
       <Testimonials />
       <Features parentClass="flat-spacing line-top-container" />
       <Banner />

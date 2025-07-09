@@ -1,12 +1,16 @@
 "use client";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { useContextElement } from "@/context/Context";
+
 export default function LookbookProduct({ product, styleClass = "style-row" }) {
-  const { setQuickViewItem } = useContextElement();
+  const locale = useLocale();
   return (
-    <div className={`loobook-product ${styleClass} `}>
+    <Link
+      href={`/product-detail/${product.id}`}
+      className={`loobook-product ${styleClass} `}
+    >
       <div className="img-style">
         <Image alt="img" src={product.imgSrc} width={151} height={151} />
       </div>
@@ -18,17 +22,21 @@ export default function LookbookProduct({ product, styleClass = "style-row" }) {
           >
             {product.title}
           </Link>
-          <div className="price text-button">${product.price.toFixed(2)}</div>
+          <div className="price text-button">
+            {locale === "ar"
+              ? `${product.price.toFixed(2)} ج.م`
+              : `${product.price.toFixed(2)} EGP`}
+          </div>
         </div>
-        <a
+        {/* <a
           href="#quickView"
           onClick={() => setQuickViewItem(product)}
           data-bs-toggle="modal"
           className="btn-lookbook btn-line"
         >
           Quick View
-        </a>
+        </a> */}
       </div>
-    </div>
+    </Link>
   );
 }

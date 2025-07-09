@@ -4,20 +4,36 @@ import { getBestItems } from "@/actions/products";
 import ProductCard1 from "@/components/productCards/ProductCard1";
 import { products12 } from "@/data/products";
 import { useQuery } from "@tanstack/react-query";
+import { useLocale } from "next-intl";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function Products() {
-  const {
-    data: products,
-    isLoading,
-    error,
-  } = useQuery({
+  const locale = useLocale();
+  const { data: products, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: getBestItems,
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
 
-  console.log(products);
+  // Transform API data to match ProductCard1 expected format
+  const transformProduct = (product) => {
+    return {
+      id: product.id,
+      title: product.name,
+      imgSrc: product.image_path,
+      imgHover:
+        product.media && product.media[1]
+          ? product.media[1].image_path
+          : product.media && product.media[0]
+          ? product.media[0].image_path
+          : product.image_path,
+      price: product.price,
+      discount: product.discount,
+      isOnSale: product.discount > 0,
+      weight: product.weight,
+      isAvailable: product.is_available === 1,
+    };
+  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -27,9 +43,13 @@ export default function Products() {
     <section className="flat-spacing">
       <div className="container">
         <div className="heading-section text-center wow fadeInUp">
-          <h3 className="heading">Top Trending</h3>
+          <h3 className="heading">
+            {locale === "ar" ? "الأكثر مبيعاً" : "Top Trending"}
+          </h3>
           <p className="subheading text-secondary">
-            Browse our Top Trending: the hottest picks loved by all.
+            {locale === "ar"
+              ? "تصفح أفضل المنتجات الأكثر مبيعاً: الاختيارات الأكثر شعبية بين المستخدمين."
+              : "Browse our Top Trending: the hottest picks loved by all."}
           </p>
         </div>
 
@@ -44,9 +64,9 @@ export default function Products() {
             1200: { slidesPerView: 4, spaceBetween: 30 },
           }}
         >
-          {products12.map((product, index) => (
+          {products.map((product, index) => (
             <SwiperSlide key={index}>
-              <ProductCard1 product={product} />
+              <ProductCard1 product={transformProduct(product)} />
             </SwiperSlide>
           ))}
         </Swiper>
