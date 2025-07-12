@@ -165,7 +165,7 @@ export default function RelatedProducts({
                       </Link>
                       {product.weight && (
                         <div className="product-weight text-caption-2">
-                          {locale === "ar" ? "الوزن:" : "Weight:"}{" "}
+                          {locale === "ar" ? "الحجم:" : "Size:"}{" "}
                           {product.weight}
                         </div>
                       )}

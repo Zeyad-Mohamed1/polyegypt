@@ -20,7 +20,7 @@ export default function ShopCategoriesTopPage1() {
           <div className="row">
             <div className="col-12">
               <h3 className="heading text-center">
-                {locale === "ar" ? "علاماتنا التجارية" : "Our Brands"}
+                {locale === "ar" ? "عروضنا" : "Offers"}
               </h3>
               <ul className="breadcrumbs d-flex align-items-center justify-content-center">
                 <li>
@@ -31,7 +31,7 @@ export default function ShopCategoriesTopPage1() {
                 <li>
                   <i className="icon-arrRight" />
                 </li>
-                <li>{locale === "ar" ? "علاماتنا التجارية" : "Our Brands"}</li>
+                <li>{locale === "ar" ? "عروضنا" : "Offers"}</li>
               </ul>
             </div>
           </div>

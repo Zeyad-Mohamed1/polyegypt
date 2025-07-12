@@ -29,8 +29,8 @@ export default async function CheckoutPage({ params }) {
               <i className="icon-arrRight" />
             </li>
             <li>
-              <Link className="link" href={`/shop-default-grid`}>
-                {t("shop")}
+              <Link className="link" href={`/shop`}>
+                {locale === "ar" ? "المتجر" : "Shop"}
               </Link>
             </li>
             <li>

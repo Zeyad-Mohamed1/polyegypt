@@ -1,14 +1,14 @@
 "use client";
 import { useLocale } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import React from "react";
 
 export default function LookbookProduct({ product, styleClass = "style-row" }) {
   const locale = useLocale();
   return (
     <Link
-      href={`/product-detail/${product.id}`}
+      href={`/product-detail/${product.id}-${product.title}`}
       className={`loobook-product ${styleClass} `}
     >
       <div className="img-style">
@@ -17,7 +17,7 @@ export default function LookbookProduct({ product, styleClass = "style-row" }) {
       <div className="content">
         <div className="info">
           <Link
-            href={`/product-detail/${product.id}`}
+            href={`/product-detail/${product.id}-${product.title}`}
             className="text-title text-line-clamp-1 link"
           >
             {product.title}

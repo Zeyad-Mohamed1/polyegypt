@@ -18,7 +18,7 @@ export default function Breadcumb({ product, locale = "en" }) {
             </Link>
 
             <i className={`icon ${isRtl ? "icon-arrLeft" : "icon-arrRight"}`} />
-            <span className="text text-caption-1">{product.name}</span>
+            <span className="text text-caption-1">{product?.title}</span>
           </div>
           {/* <div className="tf-breadcrumb-prev-next">
             <Link

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { Link } from "@/i18n/navigation";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 // import CurrencySelect from "../common/CurrencySelect";
 import LanguageSelect from "../common/LanguageSelect";
 import { useQuery } from "@tanstack/react-query";
@@ -28,7 +28,7 @@ export default function Topbar6({ bgColor = "bg-blue-2" }) {
     staleTime: 5 * 60 * 1000, // 5 minutes
   });
   const t = useTranslations("topbar");
-
+  const locale = useLocale();
   return (
     <div className={`tf-topbar ${bgColor}`}>
       <div className="container">
@@ -55,7 +55,7 @@ export default function Topbar6({ bgColor = "bg-blue-2" }) {
                 className="text-caption-1 text-white text-decoration-underline"
                 href="/offers"
               >
-                {t("ourStore")}
+                {locale === "ar" ? "عروضنا" : "Offers"}
               </Link>
             </li>
           </ul>

@@ -168,7 +168,7 @@ export default function CartModal() {
                                   {product.weight && (
                                     <div className="d-flex align-items-center gap-1">
                                       <span className="text-caption-2">
-                                        {locale === "ar" ? "الوزن:" : "Weight:"}{" "}
+                                        {locale === "ar" ? "الحجم:" : "Size:"}{" "}
                                         {product.weight}
                                       </span>
                                     </div>

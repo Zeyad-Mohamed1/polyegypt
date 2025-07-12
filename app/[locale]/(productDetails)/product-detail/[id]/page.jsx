@@ -6,6 +6,7 @@ import Breadcumb from "@/components/productDetails/Breadcumb";
 import Descriptions1 from "@/components/productDetails/descriptions/Descriptions1";
 import Details1 from "@/components/productDetails/details/Details1";
 import RelatedProducts from "@/components/productDetails/RelatedProducts";
+import { redirect } from "@/i18n/navigation";
 import React from "react";
 
 export const metadata = {
@@ -68,6 +69,10 @@ export default async function ProductDetailPage({ params }) {
   const productId = id.split("-")[0];
 
   const productData = await getProduct(productId);
+
+  if (!productData || !productData.item) {
+    return redirect(`/`);
+  }
 
   // Localize the main product
   const localizedProduct = getLocalizedProduct(productData.item, locale);

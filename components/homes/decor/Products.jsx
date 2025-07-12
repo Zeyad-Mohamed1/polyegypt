@@ -64,7 +64,7 @@ export default function Products() {
             1200: { slidesPerView: 4, spaceBetween: 30 },
           }}
         >
-          {products.map((product, index) => (
+          {products?.map((product, index) => (
             <SwiperSlide key={index}>
               <ProductCard1 product={transformProduct(product)} />
             </SwiperSlide>

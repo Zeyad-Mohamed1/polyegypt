@@ -150,7 +150,7 @@ export default function Details1({ product, locale = "en" }) {
                         <div className="tf-product-info-weight">
                           <p className="text-caption-1">
                             <span className="weight-label">
-                              {locale === "ar" ? "الوزن:" : "Weight:"}
+                              {locale === "ar" ? "الحجم:" : "Size:"}
                             </span>{" "}
                             <span className="weight-value">
                               {product.weight}

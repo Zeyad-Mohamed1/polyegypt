@@ -143,7 +143,7 @@ export default function ShopCart() {
                                   {elm.title}
                                 </Link>
                                 <div className="cart-weight">
-                                  {locale === "ar" ? "الوزن:" : "Weight:"}{" "}
+                                  {locale === "ar" ? "الحجم:" : "Size:"}{" "}
                                   {elm.weight}
                                 </div>
                               </div>

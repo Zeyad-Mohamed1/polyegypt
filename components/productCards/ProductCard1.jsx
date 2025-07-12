@@ -17,6 +17,7 @@ export default function ProductCard1({
   isNotImageRatio = false,
   radiusClass = "",
 }) {
+  console.log(productData);
   const locale = useLocale();
   const [product, setProduct] = useState(productData);
 
@@ -410,7 +411,7 @@ export default function ProductCard1({
         {product?.weight && (
           <div className="product-weight">
             <span className="weight-label">
-              {locale === "ar" ? "الوزن:" : "Weight:"}{" "}
+              {locale === "ar" ? "الحجم:" : "Size:"}{" "}
             </span>
             <span className="weight-value">{product.weight}</span>
           </div>
