@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 // import CountdownTimer from "../common/Countdown";
 import { useContextElement } from "@/context/Context";
 import { useQuery } from "@tanstack/react-query";

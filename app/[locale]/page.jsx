@@ -25,8 +25,8 @@ export default function HomeDecorPage() {
       <Hero />
       <Collections />
       <Products />
-      <LookBook />
-      <Products2 />
+      {/* <LookBook /> */}
+      {/* <Products2 /> */}
       <Testimonials />
       <Features parentClass="flat-spacing line-top-container" />
       <Banner />

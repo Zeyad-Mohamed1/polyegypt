@@ -7,6 +7,7 @@ import React from "react";
 import { getTranslations } from "next-intl/server";
 
 export default async function CheckoutPage({ params }) {
+  const { locale } = await params;
   const t = await getTranslations("checkout");
 
   return (
