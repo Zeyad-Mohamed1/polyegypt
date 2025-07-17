@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { useContextElement } from "@/context/Context";
@@ -188,7 +188,7 @@ export default function CartModal() {
                     ) : (
                       <div className="p-4">
                         {t("cart.emptyMessage")}{" "}
-                        <Link className="btn-line" href="/shop-default-grid">
+                        <Link className="btn-line" href="/shop">
                           {t("cart.exploreProducts")}
                         </Link>
                       </div>
