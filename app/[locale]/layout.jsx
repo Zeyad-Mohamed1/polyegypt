@@ -13,6 +13,7 @@ import Wishlist from "@/components/modals/Wishlist";
 import DemoModal from "@/components/modals/DemoModal";
 import Categories from "@/components/modals/Categories";
 import AccountSidebar from "@/components/modals/AccountSidebar";
+import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
 import "@/styles/search-modal.css";
 
 export const metadata = {
@@ -44,6 +45,7 @@ export default async function LocaleLayout({ children, params }) {
         <DemoModal />
         <Categories />
         <AccountSidebar />
+        <FloatingWhatsApp />
       </NextIntlClientProvider>
     </main>
   );

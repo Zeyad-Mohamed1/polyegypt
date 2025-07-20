@@ -108,10 +108,10 @@ export default function Collections() {
               </SwiperSlide>
             ))}
           </Swiper>
-          <div className="nav-prev-collection d-none d-lg-flex nav-sw style-line nav-sw-left snbp7">
+          <div className="nav-prev-collection d-flex nav-sw style-line nav-sw-left snbp7">
             <i className="icon icon-arrLeft" />
           </div>
-          <div className="nav-next-collection d-none d-lg-flex nav-sw style-line nav-sw-right snbn7">
+          <div className="nav-next-collection d-flex nav-sw style-line nav-sw-right snbn7">
             <i className="icon icon-arrRight" />
           </div>
         </div>
