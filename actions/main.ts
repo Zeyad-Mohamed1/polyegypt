@@ -76,3 +76,8 @@ export async function getLookbookProducts() {
   const response = await get("/hotspots");
   return response;
 }
+
+export async function getCertificates() {
+  const response = await get("/certificates");
+  return response;
+}

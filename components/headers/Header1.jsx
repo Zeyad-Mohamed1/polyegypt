@@ -8,10 +8,16 @@ import { useLocale, useTranslations } from "next-intl";
 import CartLength from "../common/CartLength";
 import { useUserStore } from "@/store/userStore";
 import { logout } from "@/actions/auth";
-import LanguageSelect from "../common/LanguageSelect";
+import { useQuery } from "@tanstack/react-query";
+import { getCertificates, getSettings } from "@/actions/main";
 
 export default function Header1({ fullWidth = false }) {
-  const catalogueUrl = "https://polyegy.com/"; // Replace with actual catalogue file URL
+  const { data } = useQuery({
+    queryKey: ["catalogueUrl"],
+    queryFn: () => getSettings(),
+  });
+
+  const catalogueUrl = data?.settings?.about_file;
   const locale = useLocale();
   const { user, fetchUser, clearUser } = useUserStore();
   const t = useTranslations("header");

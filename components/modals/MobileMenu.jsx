@@ -49,6 +49,7 @@ export default function MobileMenu() {
     { name: t("navigation.home"), href: "/" },
     { name: t("navigation.shop"), href: "/shop" },
     { name: t("navigation.storeList"), href: "/offers" },
+    { name: t("navigation.certificates"), href: "/certificates" },
     { name: t("navigation.aboutUs"), href: "/about-us" },
     { name: t("navigation.contact"), href: "/contact" },
   ];

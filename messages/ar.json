@@ -35,6 +35,7 @@
     "home": "الرئيسية",
     "shop": "المتجر",
     "storeList": "العروض",
+    "certificates": "الشهادات",
     "aboutUs": "من نحن",
     "contact": "اتصل بنا",
     "wishlist": "قائمة الرغبات",
@@ -42,6 +43,17 @@
   },
   "mobileMenu": {
     "needHelp": "هل تحتاج مساعدة؟"
+  },
+  "certificates": {
+    "title": "الشهادات",
+    "metaTitle": "الشهادات | PolyEgy",
+    "metaDescription": "عرض شهاداتنا وتصديقاتنا",
+    "description": "تُظهر شهاداتنا وتصديقاتنا التزامنا بالجودة والتميز.",
+    "loadMore": "تحميل المزيد",
+    "noData": "لا توجد شهادات متاحة في الوقت الحالي.",
+    "loading": "جاري تحميل الشهادات...",
+    "pages": "الصفحات",
+    "homepage": "الرئيسية"
   },
   "register": {
     "title": "تسجيل",

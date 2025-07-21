@@ -11,6 +11,7 @@ export default function Nav() {
     { name: t("home"), href: "/" },
     { name: t("shop"), href: "/shop" },
     { name: t("storeList"), href: "/offers" },
+    { name: t("certificates"), href: "/certificates" },
     { name: t("aboutUs"), href: "/about-us" },
     { name: t("contact"), href: "/contact" },
   ];

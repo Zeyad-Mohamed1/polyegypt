@@ -35,6 +35,7 @@
     "home": "Home",
     "shop": "Shop",
     "storeList": "Offers",
+    "certificates": "Certificates",
     "aboutUs": "About Us",
     "contact": "Contact",
     "wishlist": "Wishlist",
@@ -42,6 +43,17 @@
   },
   "mobileMenu": {
     "needHelp": "Need Help?"
+  },
+  "certificates": {
+    "title": "Certificates",
+    "metaTitle": "Certificates | PolyEgy",
+    "metaDescription": "View our certificates and certifications",
+    "description": "Our certificates and certifications demonstrate our commitment to quality and excellence.",
+    "loadMore": "Load More",
+    "noData": "No certificates available at the moment.",
+    "loading": "Loading certificates...",
+    "pages": "Pages",
+    "homepage": "Homepage"
   },
   "register": {
     "title": "Register",
