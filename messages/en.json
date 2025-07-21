@@ -15,7 +15,8 @@
     "login": "Login",
     "noAccount": "Don't have an account?",
     "register": "Register",
-    "support": "Support"
+    "support": "Support",
+    "downloadCatalogue": "Download Catalogue"
   },
   "login": {
     "title": "Login",

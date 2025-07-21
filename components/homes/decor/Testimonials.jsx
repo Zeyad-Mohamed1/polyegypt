@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useContextElement } from "@/context/Context";
 import { Pagination } from "swiper/modules";
 import { getTestimonials } from "@/actions/main";
 import { useQuery } from "@tanstack/react-query";
@@ -40,7 +39,7 @@ export default function Testimonials() {
         <div className="container">
           <div className="heading-section text-center">
             <h3 className="heading">
-              {locale === "ar" ? "اراء العملاء" : "Customer Say!"}
+              {locale === "ar" ? "ماذا يقول عملاؤنا !" : "Customer Say!"}
             </h3>
             <p className="subheading">
               {locale === "ar"
@@ -58,7 +57,7 @@ export default function Testimonials() {
       <div className="container">
         <div className="heading-section text-center wow fadeInUp">
           <h3 className="heading">
-            {locale === "ar" ? "اراء العملاء" : "Customer Say!"}
+            {locale === "ar" ? "ماذا يقول عملاؤنا !" : "Customer Say!"}
           </h3>
           <p className="subheading">
             {locale === "ar"

@@ -3,12 +3,14 @@
 import { getPhone } from "@/actions/main";
 import { useLocale } from "next-intl";
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 
 export default function FloatingWhatsApp({
   message = "Hello! I'm interested in your products",
   position = "bottom-right",
 }) {
   const locale = useLocale();
+  const [hasScrollTopPadding, setHasScrollTopPadding] = useState(false);
 
   const { data: phones, isLoading: phoneLoading } = useQuery({
     queryKey: ["phones"],
@@ -17,6 +19,30 @@ export default function FloatingWhatsApp({
   });
 
   const phoneNumber = phones?.[0]?.mobile;
+
+  // Check if ScrollTop button has type-1 class (padding bottom)
+  useEffect(() => {
+    const checkScrollTopPadding = () => {
+      const scrollTopElement = document.getElementById("scroll-top");
+      if (scrollTopElement) {
+        setHasScrollTopPadding(scrollTopElement.classList.contains("type-1"));
+      }
+    };
+
+    // Initial check
+    checkScrollTopPadding();
+
+    // Check when DOM changes (in case ScrollTop is added dynamically)
+    const observer = new MutationObserver(checkScrollTopPadding);
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(
@@ -41,19 +67,51 @@ export default function FloatingWhatsApp({
     }
   };
 
+  const getPositionStyles = () => {
+    const isRTL = locale === "ar";
+    const baseStyles = {
+      zIndex: 1050,
+    };
+
+    switch (position) {
+      case "bottom-left":
+        return {
+          ...baseStyles,
+          [isRTL ? "marginRight" : "marginLeft"]: "20px",
+          // CSS custom properties for responsive bottom margin
+          "--desktop-bottom": "20px",
+          "--mobile-bottom": "40px", // Increased for mobile
+        };
+      case "bottom-right":
+      default:
+        // Position WhatsApp button above scroll-to-top button
+        // ScrollTop is at 92px (normal) or 140px (with padding bottom)
+        const scrollTopBottom = hasScrollTopPadding ? 140 : 92;
+        const buttonHeight = 48;
+        const gap = 12; // Reduced gap for better visual balance
+        const whatsAppBottom = scrollTopBottom + gap;
+
+        // Increase bottom margin for mobile
+        const mobileWhatsAppBottom = hasScrollTopPadding ? 100 : 140; // Increased for mobile
+
+        return {
+          ...baseStyles,
+          [isRTL ? "marginLeft" : "marginRight"]: "20px", // Align with scroll button
+          // Add responsive styles using CSS custom properties
+          "--desktop-bottom": `${whatsAppBottom}px`,
+          "--mobile-bottom": `${mobileWhatsAppBottom}px`,
+        };
+    }
+  };
+
   return (
     <div
-      className={`position-fixed ${getPositionClasses()}`}
-      style={{
-        marginBottom: "100px",
-        marginRight: "40px",
-        zIndex: 1050,
-        // animation: "float 3s ease-in-out infinite",
-      }}
+      className={`position-fixed whatsapp-container ${getPositionClasses()}`}
+      style={getPositionStyles()}
     >
       <button
         onClick={handleWhatsAppClick}
-        className="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow-lg"
+        className="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow-lg whatsapp-button"
         style={{
           width: "48px",
           height: "48px",
@@ -79,6 +137,26 @@ export default function FloatingWhatsApp({
       </button>
 
       <style jsx>{`
+        .whatsapp-container {
+          margin-bottom: var(--desktop-bottom, 20px);
+        }
+
+        .whatsapp-button {
+          width: 48px !important;
+          height: 48px !important;
+        }
+
+        @media (max-width: 767px) {
+          .whatsapp-container {
+            margin-bottom: var(--mobile-bottom, 40px) !important;
+          }
+
+          .whatsapp-button {
+            width: 40px !important;
+            height: 40px !important;
+          }
+        }
+
         @keyframes float {
           0%,
           100% {
