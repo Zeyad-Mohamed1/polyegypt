@@ -203,11 +203,13 @@ export default function BannerTab2({ parentClass = "flat-spacing pt-0" }) {
                                   : `EGP ${item.oldPrice.toFixed(2)}`}
                               </span>
                             )} */}
-                            <span className="new-price">
-                              {locale === "ar"
-                                ? `ج.م ${item?.price?.toFixed(2)}`
-                                : `EGP ${item?.price?.toFixed(2)}`}
-                            </span>
+                            {item?.price !== 0 && (
+                              <span className="new-price">
+                                {locale === "ar"
+                                  ? `ج.م ${item?.price?.toFixed(2)}`
+                                  : `EGP ${item?.price?.toFixed(2)}`}
+                              </span>
+                            )}
                           </div>
                         </div>
                         {/* <a

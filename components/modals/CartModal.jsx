@@ -176,7 +176,7 @@ export default function CartModal() {
                                 </div>
                                 <div className="text-button">
                                   {product.quantity} X{" "}
-                                  {locale === "ar"
+                                  {product.price !== 0 && locale === "ar"
                                     ? `ج.م ${product?.price?.toFixed(2)}`
                                     : `EGP ${product?.price?.toFixed(2)}`}
                                 </div>
@@ -311,11 +311,13 @@ export default function CartModal() {
                   <div className="tf-mini-cart-bottom-wrap">
                     <div className="tf-cart-totals-discounts">
                       <h5>{t("cart.subtotal")}</h5>
-                      <h5 className="tf-totals-total-value">
-                        {locale === "ar"
-                          ? `ج.م ${totalPrice?.toFixed(2)}`
-                          : `EGP ${totalPrice?.toFixed(2)}`}
-                      </h5>
+                      {totalPrice !== 0 && (
+                        <h5 className="tf-totals-total-value">
+                          {locale === "ar"
+                            ? `ج.م ${totalPrice?.toFixed(2)}`
+                            : `EGP ${totalPrice?.toFixed(2)}`}
+                        </h5>
+                      )}
                     </div>
                     {/* <div className="tf-cart-checkbox">
                       <div className="tf-checkbox-wrapp">

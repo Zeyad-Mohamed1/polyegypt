@@ -22,11 +22,13 @@ export default function LookbookProduct({ product, styleClass = "style-row" }) {
           >
             {product.title}
           </Link>
-          <div className="price text-button">
-            {locale === "ar"
-              ? `${product.price.toFixed(2)} ج.م`
-              : `${product.price.toFixed(2)} EGP`}
-          </div>
+          {product.price !== 0 && (
+            <div className="price text-button">
+              {locale === "ar"
+                ? `${product.price.toFixed(2)} ج.م`
+                : `${product.price.toFixed(2)} EGP`}
+            </div>
+          )}
         </div>
         {/* <a
           href="#quickView"

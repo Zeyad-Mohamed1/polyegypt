@@ -115,37 +115,43 @@ export default function Details1({ product, locale = "en" }) {
                       </div>
                     </div>
                     <div className="tf-product-info-desc">
-                      <div className="tf-product-info-price">
-                        {product.discount > 0 ? (
-                          <>
-                            <h5 className="price-on-sale font-2">
-                              {locale === "ar"
-                                ? `ج.م ${(
-                                    product.price *
-                                    (1 - product.discount / 100)
-                                  ).toFixed(2)}`
-                                : `EGP ${(
-                                    product.price *
-                                    (1 - product.discount / 100)
-                                  ).toFixed(2)}`}
-                            </h5>
-                            <div className="compare-at-price font-2">
-                              {locale === "ar"
-                                ? `ج.م ${product.price?.toFixed(2)}`
-                                : `EGP ${product.price?.toFixed(2)}`}
-                            </div>
-                            <div className="badges-on-sale text-btn-uppercase">
-                              -{product.discount}%
-                            </div>
-                          </>
-                        ) : (
-                          <h5 className="price-on-sale font-2">
-                            {locale === "ar"
-                              ? `ج.م ${product.price?.toFixed(2)}`
-                              : `EGP ${product.price?.toFixed(2)}`}
-                          </h5>
-                        )}
-                      </div>
+                      {product.price !== 0 && (
+                        <div className="tf-product-info-price">
+                          {product.discount > 0 && product.price !== 0 ? (
+                            <>
+                              <h5 className="price-on-sale font-2">
+                                {locale === "ar"
+                                  ? `ج.م ${(
+                                      product.price *
+                                      (1 - product.discount / 100)
+                                    ).toFixed(2)}`
+                                  : `EGP ${(
+                                      product.price *
+                                      (1 - product.discount / 100)
+                                    ).toFixed(2)}`}
+                              </h5>
+                              <div className="compare-at-price font-2">
+                                {locale === "ar"
+                                  ? `ج.م ${product.price?.toFixed(2)}`
+                                  : `EGP ${product.price?.toFixed(2)}`}
+                              </div>
+                              <div className="badges-on-sale text-btn-uppercase">
+                                -{product.discount}%
+                              </div>
+                            </>
+                          ) : (
+                            product.price !== 0 ||
+                            (product.price !== null && (
+                              <h5 className="price-on-sale font-2">
+                                {product.price !== 0 &&
+                                  (locale === "ar"
+                                    ? `ج.م ${product.price?.toFixed(2)}`
+                                    : `EGP ${product.price?.toFixed(2)}`)}
+                              </h5>
+                            ))
+                          )}
+                        </div>
+                      )}
                       {product.weight && (
                         <div className="tf-product-info-weight">
                           <p className="text-caption-1">
@@ -230,25 +236,27 @@ export default function Details1({ product, locale = "en" }) {
                               ? getTranslation("alreadyAdded", locale)
                               : getTranslation("addToCart", locale) + " -"}
                           </span>
-                          <span className="tf-qty-price total-price">
-                            {locale === "ar" ? `ج.م ` : `EGP `}
-                            {isAddedToCartProducts(product?.id)
-                              ? (
-                                  (product.discount > 0
-                                    ? product.price *
-                                      (1 - product.discount / 100)
-                                    : product.price) *
-                                  cartProducts.filter(
-                                    (elm) => elm.id == product?.id
-                                  )[0].quantity
-                                ).toFixed(2)
-                              : (
-                                  (product.discount > 0
-                                    ? product.price *
-                                      (1 - product.discount / 100)
-                                    : product.price) * quantity
-                                ).toFixed(2)}
-                          </span>
+                          {product.price !== 0 && (
+                            <span className="tf-qty-price total-price">
+                              {locale === "ar" ? `ج.م ` : `EGP `}
+                              {isAddedToCartProducts(product?.id)
+                                ? (
+                                    (product.discount > 0
+                                      ? product.price *
+                                        (1 - product.discount / 100)
+                                      : product.price) *
+                                    cartProducts.filter(
+                                      (elm) => elm.id == product?.id
+                                    )[0].quantity
+                                  ).toFixed(2)
+                                : (
+                                    (product.discount > 0
+                                      ? product.price *
+                                        (1 - product.discount / 100)
+                                      : product.price) * quantity
+                                  ).toFixed(2)}
+                            </span>
+                          )}
                         </a>
                         <a
                           onClick={handleFavoriteToggle}

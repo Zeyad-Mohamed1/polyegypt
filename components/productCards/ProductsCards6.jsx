@@ -57,16 +57,17 @@ export default function ProductsCards6({ product }) {
           {product.title}
         </Link>
         <span className="price current-price">
-          {product.oldPrice && (
+          {product.oldPrice && product.price !== 0 && (
             <span className="old-price">
               {locale === "ar"
                 ? `ج.م ${product.oldPrice.toFixed(2)}`
                 : `EGP ${product.oldPrice.toFixed(2)}`}
             </span>
           )}{" "}
-          {locale === "ar"
-            ? `ج.م ${product.price?.toFixed(2)}`
-            : `EGP ${product.price?.toFixed(2)}`}
+          {product.price !== 0 &&
+            (locale === "ar"
+              ? `ج.م ${product.price?.toFixed(2)}`
+              : `EGP ${product.price?.toFixed(2)}`)}
         </span>
         <p className="description text-secondary text-line-clamp-2">
           The garments labelled as Committed are products that have been

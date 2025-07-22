@@ -23,9 +23,10 @@ export default function Description({ product, locale = "en" }) {
         <ul className="list-text type-disc mb_12 gap-6">
           <li className="font-2">
             {getTranslation("price", locale)}:{" "}
-            {locale === "ar"
-              ? `ج.م ${product?.price || "0.00"}`
-              : `EGP ${product?.price || "0.00"}`}
+            {product?.price !== 0 &&
+              (locale === "ar"
+                ? `ج.م ${product?.price || "0.00"}`
+                : `EGP ${product?.price || "0.00"}`)}
           </li>
           <li className="font-2">
             {getTranslation("category", locale)}:{" "}

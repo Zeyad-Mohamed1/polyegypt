@@ -37,6 +37,7 @@ export default function Orers() {
   };
 
   const formatPrice = (price) => {
+    if (price === 0) return null;
     const formattedPrice =
       typeof price === "number"
         ? price.toFixed(2)

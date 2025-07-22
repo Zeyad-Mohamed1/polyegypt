@@ -397,16 +397,18 @@ export default function ProductCard1({
           {product.title}
         </Link>
         <span className="price">
-          {hasDiscount && originalPrice && (
+          {hasDiscount && originalPrice && product.price !== 0 && (
             <span className="old-price">
               {locale === "ar"
                 ? `ج.م ${originalPrice.toFixed(2)}`
                 : `EGP ${originalPrice.toFixed(2)}`}
             </span>
           )}{" "}
-          {locale === "ar"
-            ? `ج.م ${currentPrice?.toFixed(2)}`
-            : `EGP ${currentPrice?.toFixed(2)}`}
+          {product.price !== 0 &&
+            currentPrice !== 0 &&
+            (locale === "ar"
+              ? `ج.م ${currentPrice?.toFixed(2)}`
+              : `EGP ${currentPrice?.toFixed(2)}`)}
         </span>
         {product?.weight && (
           <div className="product-weight">

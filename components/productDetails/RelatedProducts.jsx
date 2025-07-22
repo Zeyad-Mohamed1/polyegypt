@@ -169,26 +169,30 @@ export default function RelatedProducts({
                           {product.weight}
                         </div>
                       )}
-                      <span className="price">
-                        {/* Show original price (crossed out) if there's a discount */}
-                        {/* {product.discount > 0 && (
+                      {product.price !== 0 && (
+                        <span className="price">
+                          {/* Show original price (crossed out) if there's a discount */}
+                          {/* {product.discount > 0 && (
                           <span className="compare-at-price">
                             {locale === "ar"
                               ? `ج.م ${product.price?.toFixed(2)}`
                               : `EGP ${product.price?.toFixed(2)}`}
                           </span>
                         )} */}
-                        {/* Current price after discount calculation */}
-                        {locale === "ar"
-                          ? `ج.م ${(product.discount > 0
-                              ? (product.price * (100 - product.discount)) / 100
-                              : product.price
-                            )?.toFixed(2)}`
-                          : `EGP ${(product.discount > 0
-                              ? (product.price * (100 - product.discount)) / 100
-                              : product.price
-                            )?.toFixed(2)}`}
-                      </span>
+                          {/* Current price after discount calculation */}
+                          {locale === "ar"
+                            ? `ج.م ${(product.discount > 0
+                                ? (product.price * (100 - product.discount)) /
+                                  100
+                                : product.price
+                              )?.toFixed(2)}`
+                            : `EGP ${(product.discount > 0
+                                ? (product.price * (100 - product.discount)) /
+                                  100
+                                : product.price
+                              )?.toFixed(2)}`}
+                        </span>
+                      )}
                       {/* {product.category && (
                         <div className="product-category text-caption-2">
                           {product.category.name}

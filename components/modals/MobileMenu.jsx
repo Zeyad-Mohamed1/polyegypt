@@ -7,12 +7,20 @@ import { usePathname } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useUserStore } from "@/store/userStore";
 import { useQuery } from "@tanstack/react-query";
-import { getAddress, getEmail, getPhone } from "@/actions/main";
+import { getAddress, getEmail, getPhone, getSettings } from "@/actions/main";
 
 export default function MobileMenu() {
   const { user } = useUserStore();
   const pathname = usePathname();
   const t = useTranslations();
+
+  // Fetch catalogue URL
+  const { data: settings } = useQuery({
+    queryKey: ["catalogueUrl"],
+    queryFn: () => getSettings(),
+  });
+
+  const catalogueUrl = settings?.settings?.about_file;
 
   // Fetch dynamic data using React Query
   const {
@@ -83,6 +91,36 @@ export default function MobileMenu() {
             </ul>
           </div>
           <div className="mb-other-content">
+            {/* Download Catalogue Button */}
+            {catalogueUrl && (
+              <div className="mb-download-catalogue mb-3">
+                <a
+                  href={catalogueUrl}
+                  download
+                  target="_blank"
+                  className="btn btn-primary w-100 d-flex align-items-center justify-content-center gap-2 py-3 text-decoration-none fw-600 position-relative overflow-hidden"
+                  title={t("header.downloadCatalogue")}
+                  style={{
+                    borderRadius: "12px",
+                    background:
+                      "linear-gradient(135deg, #0d6efd 0%, #0056b3 100%)",
+                    border: "none",
+                    boxShadow: "0 2px 8px rgba(13, 110, 253, 0.2)",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    fontSize: "14px",
+                    fontWeight: "600",
+                    letterSpacing: "0.3px",
+                    textTransform: "uppercase",
+                    color: "#ffffff",
+                  }}
+                >
+                  <span className="position-relative">
+                    {t("header.downloadCatalogue")}
+                  </span>
+                </a>
+              </div>
+            )}
+
             {!user && (
               <div className="group-icon">
                 <Link href={`/wish-list`} className="site-nav-icon">

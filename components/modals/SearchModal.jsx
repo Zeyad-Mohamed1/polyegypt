@@ -74,16 +74,17 @@ const SearchProductCard = ({ product, locale }) => {
           {name}
         </Link>
         <span className="price">
-          {hasDiscount && (
+          {hasDiscount && product.price !== 0 && (
             <span className="old-price">
               {locale === "ar"
                 ? `ج.م ${originalPrice.toFixed(2)}`
                 : `EGP ${originalPrice.toFixed(2)}`}
             </span>
           )}{" "}
-          {locale === "ar"
-            ? `ج.م ${discountedPrice.toFixed(2)}`
-            : `EGP ${discountedPrice.toFixed(2)}`}
+          {product.price !== 0 &&
+            (locale === "ar"
+              ? `ج.م ${discountedPrice.toFixed(2)}`
+              : `EGP ${discountedPrice.toFixed(2)}`)}
         </span>
         {description && (
           <p className="description text-caption-1 text-secondary">

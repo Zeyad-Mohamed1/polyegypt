@@ -42,6 +42,7 @@ export default function ShopCart() {
 
   // Helper function to format currency
   const formatCurrency = (amount) => {
+    if (amount === 0) return null;
     return locale === "ar" ? `ج.م ${amount}` : `EGP ${amount}`;
   };
 

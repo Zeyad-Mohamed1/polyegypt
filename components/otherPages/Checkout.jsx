@@ -597,9 +597,10 @@ export default function Checkout() {
                         <div className="total-price text-button">
                           <span className="count">{elm.quantity}</span>X
                           <span className="price">
-                            {locale === "ar"
-                              ? `ج.م ${elm.price?.toFixed(2)}`
-                              : `EGP ${elm.price?.toFixed(2)}`}
+                            {elm.price !== 0 &&
+                              (locale === "ar"
+                                ? `ج.م ${elm.price?.toFixed(2)}`
+                                : `EGP ${elm.price?.toFixed(2)}`)}
                           </span>
                         </div>
                       </div>
@@ -656,29 +657,35 @@ export default function Checkout() {
                   <div className="top">
                     <div className="item d-flex align-items-center justify-content-between text-button">
                       <span>{t("subtotal")}</span>
-                      <span>
-                        {locale === "ar"
-                          ? `ج.م ${totalPrice?.toFixed(2)}`
-                          : `EGP ${totalPrice?.toFixed(2)}`}
-                      </span>
+                      {totalPrice !== 0 && (
+                        <span>
+                          {locale === "ar"
+                            ? `ج.م ${totalPrice?.toFixed(2)}`
+                            : `EGP ${totalPrice?.toFixed(2)}`}
+                        </span>
+                      )}
                     </div>
                     <div className="item d-flex align-items-center justify-content-between text-button">
                       <span>{t("shipping")}</span>
-                      <span>
-                        {locale === "ar"
-                          ? `ج.م ${selectedShippingCost?.toFixed(2)}`
-                          : `EGP ${selectedShippingCost?.toFixed(2)}`}
-                      </span>
+                      {selectedShippingCost !== 0 && (
+                        <span>
+                          {locale === "ar"
+                            ? `ج.م ${selectedShippingCost?.toFixed(2)}`
+                            : `EGP ${selectedShippingCost?.toFixed(2)}`}
+                        </span>
+                      )}
                     </div>
                   </div>
                   <div className="bottom">
                     <h5 className="d-flex justify-content-between">
                       <span>{t("total")}</span>
-                      <span className="total-price-checkout">
-                        {locale === "ar"
-                          ? `ج.م ${finalTotal?.toFixed(2)}`
-                          : `EGP ${finalTotal?.toFixed(2)}`}
-                      </span>
+                      {finalTotal !== 0 && (
+                        <span className="total-price-checkout">
+                          {locale === "ar"
+                            ? `ج.م ${finalTotal?.toFixed(2)}`
+                            : `EGP ${finalTotal?.toFixed(2)}`}
+                        </span>
+                      )}
                     </h5>
                   </div>
                 </div>
