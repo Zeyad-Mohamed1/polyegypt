@@ -514,7 +514,11 @@ export default function Checkout() {
                   )}
                   <textarea
                     name="notes"
-                    placeholder={t("writeNote")}
+                    placeholder={
+                      locale === "ar"
+                        ? "العنوان التفصيلي للتسليم"
+                        : "Detailed Delivery Address"
+                    }
                     value={shippingInfo.notes}
                     onChange={handleShippingInfoChange}
                   />
@@ -609,49 +613,51 @@ export default function Checkout() {
                 </div>
 
                 {/* Shipping Methods */}
-                <div className="ship">
-                  <span className="text-button">{t("shippingMethod")}</span>
-                  <div className="flex-grow-1">
-                    {cities?.map((city) => (
-                      <fieldset
-                        key={city.id}
-                        className="ship-item"
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "8px",
-                          marginBottom: "4px",
-                        }}
-                      >
-                        <input
-                          type="radio"
-                          name="ship-check"
-                          className="tf-check-rounded"
-                          id={`city-${city.id}`}
-                          checked={selectedShippingOption?.id === city.id}
-                          onChange={() => handleShippingOptionChange(city)}
-                        />
-                        <label
-                          htmlFor={`city-${city.id}`}
+                {user && (
+                  <div className="ship">
+                    <span className="text-button">{t("shippingMethod")}</span>
+                    <div className="flex-grow-1">
+                      {cities?.map((city) => (
+                        <fieldset
+                          key={city.id}
+                          className="ship-item"
                           style={{
                             display: "flex",
-                            justifyContent: "space-between",
                             alignItems: "center",
-                            flexGrow: 1,
-                            cursor: "pointer",
+                            gap: "8px",
+                            marginBottom: "4px",
                           }}
                         >
-                          <span>{city.name}</span>
-                          <span className="price">
-                            {locale === "ar"
-                              ? `ج.م ${city.delivery_tax?.toFixed(2)}`
-                              : `EGP ${city.delivery_tax?.toFixed(2)}`}
-                          </span>
-                        </label>
-                      </fieldset>
-                    ))}
+                          <input
+                            type="radio"
+                            name="ship-check"
+                            className="tf-check-rounded"
+                            id={`city-${city.id}`}
+                            checked={selectedShippingOption?.id === city.id}
+                            onChange={() => handleShippingOptionChange(city)}
+                          />
+                          <label
+                            htmlFor={`city-${city.id}`}
+                            style={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                              alignItems: "center",
+                              flexGrow: 1,
+                              cursor: "pointer",
+                            }}
+                          >
+                            <span>{city.name}</span>
+                            <span className="price">
+                              {locale === "ar"
+                                ? `ج.م ${city.delivery_tax?.toFixed(2)}`
+                                : `EGP ${city.delivery_tax?.toFixed(2)}`}
+                            </span>
+                          </label>
+                        </fieldset>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 <div className="sec-total-price">
                   <div className="top">
