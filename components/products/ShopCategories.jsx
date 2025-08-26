@@ -12,63 +12,76 @@ export default function ShopCategories() {
     queryKey: ["categories"],
     queryFn: getCategories,
   });
+
+  console.log(categories);
+
   return (
     <section className="flat-spacing">
       <div className="container">
-        <Swiper
-          dir="ltr"
-          slidesPerView={5}
-          spaceBetween={20}
-          breakpoints={{
-            1200: { slidesPerView: 6, spaceBetween: 20 },
-            1000: { slidesPerView: 4, spaceBetween: 20 },
-            768: { slidesPerView: 3, spaceBetween: 20 },
-            480: { slidesPerView: 2, spaceBetween: 15 },
-            0: { slidesPerView: 2, spaceBetween: 15 },
-          }}
-          modules={[Pagination, Navigation]}
-          pagination={{
-            clickable: true,
-            el: ".spd54",
-          }}
-          navigation={{
-            prevEl: ".snbp12",
-            nextEl: ".snbn12",
-          }}
-        >
-          {categories?.slice(0, 6).map((collection, index) => (
-            <SwiperSlide key={index}>
-              <div className="collection-circle hover-img">
-                <Link
-                  href={`/products/${collection.id}-${collection.name}`}
-                  className="img-style"
-                >
-                  <Image
-                    className="lazyload"
-                    data-src={collection.logo_path}
-                    alt={collection.name}
-                    src={collection.logo_path}
-                    width={363}
-                    height={363}
-                  />
-                </Link>
-                <div className="collection-content text-center">
-                  <div>
-                    <Link
-                      href={`/products/${collection.id}-${collection.name}`}
-                      className="cls-title"
-                    >
-                      <h6 className="title-category">{collection.name}</h6>
-                      <i className="icon icon-arrowUpRight" />
-                    </Link>
+        <div className="flat-sw-navigation">
+          <Swiper
+            dir="ltr"
+            slidesPerView={5}
+            spaceBetween={20}
+            breakpoints={{
+              1200: { slidesPerView: 6, spaceBetween: 20 },
+              1000: { slidesPerView: 4, spaceBetween: 20 },
+              768: { slidesPerView: 3, spaceBetween: 20 },
+              480: { slidesPerView: 2, spaceBetween: 15 },
+              0: { slidesPerView: 2, spaceBetween: 15 },
+            }}
+            modules={[Pagination, Navigation]}
+            pagination={{
+              clickable: true,
+              el: ".spd54",
+            }}
+            navigation={{
+              prevEl: ".snbp12",
+              nextEl: ".snbn12",
+            }}
+          >
+            {categories?.map((collection, index) => (
+              <SwiperSlide key={index}>
+                <div className="collection-circle hover-img">
+                  <Link
+                    href={`/products/${collection.id}-${collection.name}`}
+                    className="img-style"
+                  >
+                    <Image
+                      className="lazyload"
+                      data-src={collection.logo_path}
+                      alt={collection.name}
+                      src={collection.logo_path}
+                      width={363}
+                      height={363}
+                    />
+                  </Link>
+                  <div className="collection-content text-center">
+                    <div>
+                      <Link
+                        href={`/products/${collection.id}-${collection.name}`}
+                        className="cls-title"
+                      >
+                        <h6 className="title-category">{collection.name}</h6>
+                        <i className="icon icon-arrowUpRight" />
+                      </Link>
+                    </div>
+                    {/* <div className="count text-secondary">{collection.count}</div> */}
                   </div>
-                  {/* <div className="count text-secondary">{collection.count}</div> */}
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className="d-flex d-lg-none sw-pagination-collection sw-dots type-circle justify-content-center spd54" />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className="d-flex d-lg-none sw-pagination-collection sw-dots type-circle justify-content-center spd54" />
+
+          {/* Navigation Arrows */}
+          <div className="nav-prev-collection d-flex nav-sw style-line nav-sw-left snbp12">
+            <i className="icon icon-arrLeft" />
+          </div>
+          <div className="nav-next-collection d-flex nav-sw style-line nav-sw-right snbn12">
+            <i className="icon icon-arrRight" />
+          </div>
+        </div>
       </div>
     </section>
   );
